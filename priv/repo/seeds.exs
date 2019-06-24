@@ -1,11 +1,11 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Rumbl.Repo.insert!(%Rumbl.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias Rumbl.Repo
+alias Rumbl.Accounts.User
+
+users = [
+  %User{name: "Oskar Damkjaer", username: "one_screen"},
+  %User{name: "Marcel", username: "bitcoin_life"},
+  %User{name: "Kai Michels", username: "warm_car"},
+  %User{name: "Tim", username: "tech_lead"}
+]
+
+Enum.each(users, fn usr -> Repo.insert!(usr) end)

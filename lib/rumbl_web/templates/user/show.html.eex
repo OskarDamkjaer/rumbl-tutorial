@@ -1,0 +1,2 @@
+<h1> showing user: <%= render "user.html", user: @user %> </h1>
+<%= link "back to list", to: Routes.user_path(@conn, :index) %>
