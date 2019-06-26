@@ -9,5 +9,9 @@
     Username: <%= text_input f, :username, placeholder: "a username you want" %>
     <%= error_tag f, :username %>
   </div>
+<div>
+    Password: <%= text_input f, :password, placeholder: "your password" %>
+    <%= error_tag f, :password %>
+  </div>
   <%= submit "create user" %>
 <% end %>
