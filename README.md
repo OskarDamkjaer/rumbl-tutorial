@@ -1,5 +1,9 @@
 # Rumbl
 
+# todo
+
+setup better dev feeling with auto recompile && easier cypress stuffs
+
 # notes
 
 `Because the rendering contract is so simple, nothing is stopping developers from defining render clauses directly on the view module, skipping the whole template`
