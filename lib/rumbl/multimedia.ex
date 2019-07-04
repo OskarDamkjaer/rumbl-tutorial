@@ -30,4 +30,20 @@ defmodule Rumbl.Multimedia do
   def change_video(%Video{} = video) do
     Video.changeset(video, %{})
   end
+
+  def list_user_videos(%User{} = user) do
+    Video
+    |> user_videos_query(user)
+    |> Repo.all()
+  end
+
+  def get_user_video!(%User{} = user, id) do
+    Video
+    |> user_videos_query(user)
+    |> Repo.get!(id)
+  end
+
+  def user_videos_query(query, %User{id: user_id}) do
+    from(v in query, where: v.user_id == ^user_id)
+  end
 end
