@@ -2,7 +2,7 @@
 
 # todo
 
-setup better dev feeling with auto recompile && easier cypress stuffs
+seltup better dev feeling with auto recompile && easier cypress stuffs
 
 # notes
 
