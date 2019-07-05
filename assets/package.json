@@ -17,15 +17,19 @@
         "copy-webpack-plugin": "^4.5.0",
         "css-loader": "^2.1.1",
         "cypress": "^3.3.1",
+        "husky": "^3.0.0",
         "mini-css-extract-plugin": "^0.4.0",
         "optimize-css-assets-webpack-plugin": "^4.0.0",
-        "pre-commit": "^1.2.2",
         "uglifyjs-webpack-plugin": "^1.2.4",
         "webpack": "4.4.0",
         "webpack-cli": "^2.0.10"
     },
-    "pre-commit": [
-        "mix credo",
-        "mix test"
-    ]
+    "husky": {
+        "hooks": {
+            "pre-commit": [
+                "mix credo",
+                "mix test"
+            ]
+        }
+    }
 }
