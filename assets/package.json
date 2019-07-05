@@ -27,8 +27,7 @@
     "husky": {
         "hooks": {
             "pre-commit": [
-                "mix credo",
-                "mix test"
+                "cd .. && mix credo && mix test"
             ]
         }
     }
