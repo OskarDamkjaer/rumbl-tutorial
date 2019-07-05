@@ -1,4 +1,7 @@
 defmodule Rumbl.Accounts.User do
+  @moduledoc """
+  Model for users of rumbl
+  """
   use Ecto.Schema
   alias Ecto.Changeset
   import Ecto.Changeset
@@ -29,11 +32,11 @@ defmodule Rumbl.Accounts.User do
     |> put_pass_hash()
   end
 
-  def put_pass_hash(changeset = %Changeset{valid?: true, changes: %{password: pass}}) do
+  def put_pass_hash(%Changeset{valid?: true, changes: %{password: pass}} = changeset) do
     put_change(changeset, :password_hash, Pbkdf2.hash_pwd_salt(pass))
   end
 
-  def put_pass_hash(changeset = %Changeset{valid?: false}) do
+  def put_pass_hash(%Changeset{valid?: false} = changeset) do
     changeset
   end
 end

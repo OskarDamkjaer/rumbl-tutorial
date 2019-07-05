@@ -1,4 +1,7 @@
 defmodule Rumbl.Multimedia.Category do
+  @moduledoc """
+  Categories for movies or other multimedia. Such as genre
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

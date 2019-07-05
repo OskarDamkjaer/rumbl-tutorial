@@ -29,8 +29,6 @@ defmodule RumblWeb.UserController do
         |> RumblWeb.Auth.login(user)
         |> redirect(to: Routes.user_path(conn, :index))
 
-      # TODO  handle error from unique usernames
-
       {:error, %Changeset{} = changeset} ->
         conn
         |> put_flash(:error, "your form had errors")

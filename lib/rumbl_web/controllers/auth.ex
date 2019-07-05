@@ -1,4 +1,8 @@
 defmodule RumblWeb.Auth do
+  @moduledoc """
+  Sets up authentication sessions with plug
+  """
+
   import Plug.Conn
   alias RumblWeb.Router.Helpers, as: Routes
   alias Phoenix.Controller

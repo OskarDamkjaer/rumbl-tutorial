@@ -46,6 +46,7 @@ defmodule Rumbl.MixProject do
       # Own deps
       {:pbkdf2_elixir, "~> 1.0"},
       # Dev deps
+      {:pre_commit, "~> 0.3.4", only: :dev},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}
     ]
   end

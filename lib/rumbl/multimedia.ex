@@ -1,4 +1,8 @@
 defmodule Rumbl.Multimedia do
+  @moduledoc """
+    The context wherin all multimedia lives
+
+  """
   import Ecto.Query, warn: false
   alias Rumbl.Repo
   alias Rumbl.Accounts.User

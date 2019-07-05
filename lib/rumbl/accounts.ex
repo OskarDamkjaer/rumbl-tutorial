@@ -1,4 +1,8 @@
 defmodule Rumbl.Accounts do
+  @moduledoc """
+    The context wherin all accounts live
+  """
+
   alias Rumbl.Accounts.User
   alias Rumbl.Repo
 

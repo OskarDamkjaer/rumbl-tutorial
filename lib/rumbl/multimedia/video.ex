@@ -1,4 +1,8 @@
 defmodule Rumbl.Multimedia.Video do
+  @moduledoc """
+  Defines the video schema
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
