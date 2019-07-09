@@ -1,6 +1,14 @@
 defmodule RumblWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :rumbl
 
+  if Application.get_env(:rumbl, :sql_sandbox) do
+    plug(Phoenix.Ecto.SQL.Sandbox,
+      at: "/sandbox",
+      header: "x-session-id",
+      repo: Rumbl.Repo
+    )
+  end
+
   socket "/socket", RumblWeb.UserSocket,
     websocket: true,
     longpoll: false
