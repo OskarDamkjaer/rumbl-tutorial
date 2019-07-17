@@ -11,10 +11,10 @@
   <body>
     
 <section class="container"> 
-<nav role="navigation">
-<ul>
+<nav role="navigation"> <ul>
 <%= if @current_user do %>
-<li><%= @current_user.username %></li> <li>
+<li><%= @current_user.username %></li>
+<li><%= link "My Videos", to: Routes.video_path(@conn, :index) %></li> <li>
 <%= link "Log out",
 to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
 </li>
@@ -22,7 +22,6 @@ to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
 <li><%= link "Register", to: Routes.user_path(@conn, :new) %></li> <li><%= link "Log in", to: Routes.session_path(@conn, :new) %></li>
 <% end %> </ul>
 </nav>
-</a>
 </section>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
