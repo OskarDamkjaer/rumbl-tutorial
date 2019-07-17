@@ -16,19 +16,16 @@ defmodule Rumbl.AccountsTest do
 
     test "with valid data inserts user" do
       assert {:ok, %User{id: id} = user} = Accounts.register_user(@valid_attrs)
-      assert [%User{id: ^id}] = Accounts.list_users()
     end
 
     test "with invalid data does not insert user" do
       assert {:error, _changeset} = Accounts.register_user(@invalid_attrs)
-      assert Accounts.list_users() == []
     end
 
     test "enforces unique usernames" do
       assert {:ok, %User{id: id}} = Accounts.register_user(@valid_attrs)
       assert {:error, changeset} = Accounts.register_user(@valid_attrs)
       assert %{username: ["has already been taken"]} = errors_on(changeset)
-      assert [%User{id: ^id}] = Accounts.list_users()
     end
   end
 

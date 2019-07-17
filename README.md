@@ -2,6 +2,8 @@
 
 # todo
 
+Still don't know how to make cypress keep it's own db
+
 seltup better dev feeling with auto recompile && easier cypress stuffs
 
 # notes

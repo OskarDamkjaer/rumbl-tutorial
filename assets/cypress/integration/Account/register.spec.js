@@ -1,6 +1,33 @@
 describe("/users/new", () => {
   beforeEach(() => {
-    cy.visit("/users/new");
+    cy.visit({
+      url: "/users/new",
+      headers: { "x-token": Cypress.env("token") }
+    });
+  });
+
+  it("test", () => {
+    cy.request({
+      url: "/users/create",
+      body: { username: "haj", user: "haj", password: "password" },
+      headers: { "x-token": Cypress.env("token") }
+    });
+    cy.visit({
+      url: "/users/new",
+      headers: { "x-token": Cypress.env("token") }
+    });
+
+    const rnd = new Date().getTime();
+
+    cy.get("#user_name").type(`test_name${rnd}`);
+    cy.get("#user_username").type(`usr${rnd}`);
+    cy.get("#user_password").type("password");
+    cy.get("form").submit();
+
+    cy.visit({
+      url: "/users",
+      headers: { "x-token": Cypress.env("token") }
+    }); 
   });
 
   it("able to login", () => {

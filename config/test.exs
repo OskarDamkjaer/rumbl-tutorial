@@ -8,11 +8,12 @@ config :rumbl, Rumbl.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
-# We don't run a server during test. If one is required,
-# you can enable the server option below.
 config :rumbl, RumblWeb.Endpoint,
   http: [port: 4002],
-  server: false
+  # Will cause problems if running tests twice in for example CI due to ports
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :rumbl, sql_sandbox: true
