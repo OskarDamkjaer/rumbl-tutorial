@@ -1,4 +1,9 @@
 defmodule Rumbl.Multimedia.Permalink do
+  @moduledoc """
+  Defines a custom ecto type that allows ids
+  to take the shape 123-words-words and parse the numbers out
+  """
+
   @behaviour Ecto.Type
   def type, do: :id
 
