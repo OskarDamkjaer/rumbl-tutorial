@@ -6,12 +6,9 @@
     </div>
     <div class="column annotations"> 
         <h3>Annotations</h3>
-        <div id="msg-container"/>
-        <div>
-            <textarea id="msg-input" rows="3" placeholder="Comment..."/>
+            <input id="msg-input" rows="3" placeholder="Comment...">
             <button id="msg-submit" class="button column" type="submit">
                 Post
             </button>
-        </div>
     </div>
 </div>
